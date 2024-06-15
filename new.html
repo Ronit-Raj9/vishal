@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #333;
+            color: white;
+            overflow: hidden;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        
+        main {
+            padding: 20px;
+            background-color: white;
+        }
+        
+        section {
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Basic HTML Page</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showAlert('Home')">Home</a></li>
+            <li><a href="#about" onclick="showAlert('About')">About</a></li>
+            <li><a href="#contact" onclick="showAlert('Contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Home Section</h2>
+            <p>This is the home section of the webpage.</p>
+            <button onclick="changeContent('home')">Change Home Content</button>
+        </section>
+        
+        <section id="about">
+            <h2>About Section</h2>
+            <p>This is the about section of the webpage.</p>
+            <button onclick="changeContent('about')">Change About Content</button>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Section</h2>
+            <p>This is the contact section of the webpage.</p>
+            <button onclick="changeContent('contact')">Change Contact Content</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Basic HTML Page</p>
+    </footer>
+
+    <script>
+        function showAlert(section) {
+            alert('You clicked on the ' + section + ' link.');
+        }
+
+        function changeContent(section) {
+            var content;
+            if (section === 'home') {
+                content = 'This is the new content for the home section!';
+            } else if (section === 'about') {
+                content = 'This is the new content for the about section!';
+            } else if (section === 'contact') {
+                content = 'This is the new content for the contact section!';
+            }
+            document.getElementById(section).querySelector('p').innerText = content;
+        }
+    </script>
+</body>
+</html>
